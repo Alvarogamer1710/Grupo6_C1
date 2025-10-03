@@ -11,7 +11,7 @@ public:
     Biblioteca(){
     }
 
-    void agregarLibro( T& item) {
+    void agregarLibro( T* item) {
         if (siguientePosicionLibre < 20) {
             items[siguientePosicionLibre] = item;
             siguientePosicionLibre++;
@@ -30,6 +30,14 @@ public:
                 siguientePosicionLibre--;
                 break;
             }
+        }
+    }
+
+    std::string comprobarLibrosDisponibles() {
+        std::string listaLibros;
+        for (int i = 0; i < siguientePosicionLibre-1; i++) {
+            if (items[i].)
+
         }
     }
     

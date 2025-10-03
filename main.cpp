@@ -157,7 +157,7 @@ public:
             siguientePosicionLibre++;
             std::cout << "Item agregado exitosamente." << std::endl;
         } else {
-            std::cout << "La biblioteca está llena. No se pueden agregar más items." << std::endl;
+            std::cout << "La biblioteca está llena. No se pueden agregar más libros." << std::endl;
         }
     }
 
@@ -193,12 +193,6 @@ public:
         }
         return false;
     }
-
-    bool verSiTienePersonaLibro(T &libro , Usuario &usuario) {
-        // aqui vemos si el usuario tiene el libro o no
-        return false;
-    }
-
 
 };
 

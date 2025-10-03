@@ -36,7 +36,7 @@ public:
     std::string comprobarLibrosDisponibles() {
         std::string listaLibros;
         for (int i = 0; i < siguientePosicionLibre-1; i++) {
-            if (items[i].)
+          //  if (items[i].)
 
         }
     }

@@ -161,7 +161,7 @@ public:
     Biblioteca(){
     }
 
-    void agregarLibro( T* item) {
+    void agregarLibro( T &item) {
         if (siguientePosicionLibre < 20) {
             items[siguientePosicionLibre] = item;
             siguientePosicionLibre++;
@@ -171,28 +171,41 @@ public:
         }
     }
 
-    void eliminarLibro( T* item) {
-        ~destroy(item);
-        std::cout << "Item eliminado exitosamente." << std::endl;
+
+
+    void darLibro(T &libro, Usuario &usuario) {
+
+        bool completado = false;
         for(int i = 0; i < siguientePosicionLibre; i++){
-            if(items[i] == *item){
-                items[i] = items[siguientePosicionLibre - 1];
-                siguientePosicionLibre--;
-                break;
+            if(items[i] == libro && !completado){
+                usuario.agregarLibro(items[i]);
+                items[i] = NULL;
+                completado = true;
+                std::cout << "Libro dado Exitosamente" << std::endl;
             }
+            if (completado && i !=siguientePosicionLibre) {
+                items[i] = items[i+1];
+            }
+
+        }
+        if (completado) {
+            siguientePosicionLibre--;
         }
     }
 
 
-
-    bool comprobarLibroDisponible(Libro* libro) {
-        std::string listaLibros;
+    bool comprobarLibroDisponible(T &libro) {
         for (int i = 0; i < siguientePosicionLibre-1; i++) {
             if (items[i] == libro) {
                 return true;
             }
 
         }
+        return false;
+    }
+
+    bool verSiTienePersonaLibro(T &libro , Usuario &usuario) {
+        // aqui vemos si el usuario tiene el libro o no
         return false;
     }
 

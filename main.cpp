@@ -128,6 +128,16 @@ public:
             std::cout << "-------------------\n";
         }
     }
+
+    bool tieneLibro(int id) const {
+        for (int i = 0; i < numLibrosActuales; i++) {
+            if (librosActuales[i].getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 };
 
 

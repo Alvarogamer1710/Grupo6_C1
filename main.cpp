@@ -169,7 +169,6 @@ public:
         for(int i = 0; i < siguientePosicionLibre; i++){
             if(items[i] == libro && !completado){
                 usuario.agregarLibro(items[i]);
-                items[i] = NULL;
                 completado = true;
                 std::cout << "Libro dado Exitosamente" << std::endl;
             }

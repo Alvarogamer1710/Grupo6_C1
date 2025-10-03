@@ -1,1 +1,45 @@
+# Archivos de compilación
+cmake-build-*/
+build/
+out/
+
+# Archivos generados por CMake
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# Archivos de IDE (CLion, IntelliJ, JetBrains)
+.idea/
+*.iml
+
+# Archivos temporales del sistema
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Archivos binarios y ejecutables
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+
+# Archivos de logs
+*.log
+
+# Archivos de pruebas
+*.gcda
+*.gcno
+*.gcov
 

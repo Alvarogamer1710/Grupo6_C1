@@ -2,17 +2,6 @@
 #include <iostream>
 
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-int main() {
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
-
-    for (int i = 1; i <= 5; i++) {
-        std::cout << "i = " << i << std::endl;
-    }
-
-    return 0;
-
-}
 
 // generos
 enum class Genero {
@@ -211,3 +200,26 @@ public:
 
 
 };
+
+int main() {
+    Libro l1("El Hobbit", 1, "J.R.R. Tolkien", Genero::Fantasia);
+    Libro l2("Cien anos de soledad", 2, "Gabriel Garcia Marquez", Genero::Drama);
+    Libro l3("El Quijote", 3, "Miguel de Cervantes", Genero::Aventura);
+
+    Usuario u1("Juan", "Perez", "12345678");
+
+    u1.mostrarInfo();
+
+    u1.agregarLibro(l1);
+    u1.agregarLibro(l2);
+
+    u1.mostrarLibrosActuales();
+
+    u1.devolverLibro(1);
+
+    u1.mostrarLibrosActuales();
+    u1.mostrarHistorial();
+
+    return 0;
+}
+

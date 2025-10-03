@@ -116,5 +116,5 @@ public:
         std::cout << "Genero: " << generoToString(genero_libro) << std::endl;
     }
 
-
+// Hola
 };

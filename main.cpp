@@ -1,9 +1,6 @@
 
 #include <iostream>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-
-// generos
 enum class Genero {
     Accion,
     Drama,
@@ -13,8 +10,6 @@ enum class Genero {
     Fantasia
 };
 
-//genero a string, los defino fuera de la clase, uso enum para que se puedan elegir de unos
-//predeterminados, para facilitar en momento de clasificarlo los libros
 static inline std::string generoToString(Genero g) {
     switch (g) {
         case Genero::Accion:     return "Accion";
@@ -29,34 +24,30 @@ static inline std::string generoToString(Genero g) {
 
 class Libro {
 private:
-    int id_libro;              // id
-    std::string nombre_libro;  // titulo
-    std::string autor_libro;   // autor
-    Genero genero_libro;       // genero
+    int id_libro;
+    std::string nombre_libro;
+    std::string autor_libro;
+    Genero genero_libro;
 
 public:
-    // constructor vacio
     Libro() {
     }
 
-    // constructor
     Libro(std::string titulo, int id, std::string autor, Genero g)
     :nombre_libro(titulo), id_libro(id), autor_libro(autor), genero_libro(g) {
     }
 
-    // getters
     int getId() const { return id_libro; }
     std::string getTitulo() const { return nombre_libro; }
     std::string getAutor() const { return autor_libro; }
     Genero getGenero() const { return genero_libro; }
 
-    // setters
     void setTitulo(const std::string& t) { nombre_libro = t; }
     void setAutor(const std::string& a) { autor_libro = a; }
     void setGenero(Genero g) { genero_libro = g; }
     void setId(int id) { id_libro = id; }
 
-    // info
+
     void getInfoLibro() const {
         std::cout << "ID: " << id_libro << std::endl;
         std::cout << "Titulo: " << nombre_libro << std::endl;

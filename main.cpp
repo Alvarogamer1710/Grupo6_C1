@@ -1,47 +1,7 @@
 
 #include <iostream>
 
-template <typename T>
-class Biblioteca {
-private:
-    T items[20];
-    int siguientePosicionLibre = 0;
-
-public:
-    Biblioteca(){
-    }
-
-    void agregarLibro( T* item) {
-        if (siguientePosicionLibre < 20) {
-            items[siguientePosicionLibre] = item;
-            siguientePosicionLibre++;
-            std::cout << "Item agregado exitosamente." << std::endl;
-        } else {
-            std::cout << "La biblioteca está llena. No se pueden agregar más items." << std::endl;
-        }
-    }
-    
-    void eliminarLibro( T* item) {
-        ~destroy(item);
-        std::cout << "Item eliminado exitosamente." << std::endl;
-        for(int i = 0; i < siguientePosicionLibre; i++){
-            if(items[i] == *item){
-                items[i] = items[siguientePosicionLibre - 1];
-                siguientePosicionLibre--;
-                break;
-            }
-        }
-    }
-
-    std::string comprobarLibrosDisponibles() {
-        std::string listaLibros;
-        for (int i = 0; i < siguientePosicionLibre-1; i++) {
-          //  if (items[i].)
-
-        }
-    }
-    
-};// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
     auto lang = "C++";
     std::cout << "Hello and welcome to " << lang << "!\n";
@@ -188,4 +148,53 @@ public:
             std::cout << "-------------------\n";
         }
     }
+};
+
+
+template <typename T>
+class Biblioteca {
+private:
+    T items[20];
+    int siguientePosicionLibre = 0;
+
+public:
+    Biblioteca(){
+    }
+
+    void agregarLibro( T* item) {
+        if (siguientePosicionLibre < 20) {
+            items[siguientePosicionLibre] = item;
+            siguientePosicionLibre++;
+            std::cout << "Item agregado exitosamente." << std::endl;
+        } else {
+            std::cout << "La biblioteca está llena. No se pueden agregar más items." << std::endl;
+        }
+    }
+
+    void eliminarLibro( T* item) {
+        ~destroy(item);
+        std::cout << "Item eliminado exitosamente." << std::endl;
+        for(int i = 0; i < siguientePosicionLibre; i++){
+            if(items[i] == *item){
+                items[i] = items[siguientePosicionLibre - 1];
+                siguientePosicionLibre--;
+                break;
+            }
+        }
+    }
+
+
+
+    bool comprobarLibroDisponible(Libro* libro) {
+        std::string listaLibros;
+        for (int i = 0; i < siguientePosicionLibre-1; i++) {
+            if (items[i] == libro) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+
 };

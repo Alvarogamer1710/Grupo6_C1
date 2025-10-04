@@ -64,10 +64,6 @@ enum class Genero {
 };
 ```
 
-**Ventajas:**
-- **Type Safety**: Evita errores de tipo en tiempo de compilación
-- **Legibilidad**: El código es más fácil de leer y mantener
-- **Mantenibilidad**: Cambios en los valores se realizan en un solo lugar
 
 ### 3. Plantillas (Templates)
 
@@ -99,21 +95,21 @@ El proyecto utiliza **arrays estáticos** para gestionar las colecciones:
 ### Diagrama de Clases
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│     Genero      │    │      Libro      │    │    Usuario      │
-│   (enum class)  │    │                 │    │                 │
-├─────────────────┤    ├─────────────────┤    ├─────────────────┤
-│ • Accion        │    │ - id_libro      │    │ - nombre        │
-│ • Drama         │    │ - nombre_libro  │    │ - apellido      │
-│ • Comedia       │    │ - autor_libro   │    │ - dni           │
-│ • Romantico     │    │ - genero_libro  │    │ - librosActuales│
-│ • Aventura      │    │                 │    │ - historial     │
-│ • Fantasia      │    │ + getId()       │    │ - numLibros...  │
-└─────────────────┘    │ + getTitulo()   │    │                 │
-                       │ + getAutor()    │    │ + agregarLibro()│
+┌─────────────────┐    ┌─────────────────┐    ┌──────────────────┐
+│     Genero      │    │      Libro      │    │    Usuario       │
+│   (enum class)  │    │                 │    │                  │
+├─────────────────┤    ├─────────────────┤    ├──────────────────┤
+│ • Accion        │    │ - id_libro      │    │ - nombre         │
+│ • Drama         │    │ - nombre_libro  │    │ - apellido       │
+│ • Comedia       │    │ - autor_libro   │    │ - dni            │
+│ • Romantico     │    │ - genero_libro  │    │ - librosActuales │
+│ • Aventura      │    │                 │    │ - historial      │
+│ • Fantasia      │    │ + getId()       │    │ - numLibros...   │
+└─────────────────┘    │ + getTitulo()   │    │                  │
+                       │ + getAutor()    │    │ + agregarLibro() │
                        │ + getGenero()   │    │ + devolverLibro()│
-                       │ + getInfoLibro()│    │ + mostrarInfo() │
-                       └─────────────────┘    └─────────────────┘
+                       │ + getInfoLibro()│    │ + mostrarInfo()  │
+                       └─────────────────┘    └──────────────────┘
                                 │                      │
                                 └──────────────────────┘
                                           │
@@ -196,18 +192,6 @@ La función auxiliar `generoToString()` convierte valores enum a strings:
 
 ## Manual de Usuario
 
-### Requisitos del Sistema
-
-**Software necesario:**
-- Compilador C++ compatible con C++20 (GCC, Clang, MSVC)
-- CMake versión 4.0 o superior
-- Sistema operativo: Windows, Linux, macOS
-
-**Hardware mínimo:**
-- 512 MB de RAM
-- 100 MB de espacio en disco
-- Procesador x86/x64
-
 ### Funcionalidades Disponibles
 
 #### 1. Gestión de Libros
@@ -233,38 +217,6 @@ La función auxiliar `generoToString()` convierte valores enum a strings:
 3. **Interfaz**: Solo interfaz de línea de comandos
 4. **Búsqueda**: Solo búsqueda por ID numérico
 
----
-
-## Compilación y Ejecución
-
-### Usando CMake
-
-1. **Abrir terminal** en el directorio del proyecto
-2. **Crear directorio de build**:
-   ```bash
-   mkdir build
-   cd build
-   ```
-3. **Configurar el proyecto**:
-   ```bash
-   cmake ..
-   ```
-4. **Compilar**:
-   ```bash
-   cmake --build .
-   ```
-5. **Ejecutar**:
-   ```bash
-   ./Grupo6_AC1        # Linux/macOS
-   Grupo6_AC1.exe      # Windows
-   ```
-
-### Compilación Manual
-
-```bash
-g++ -std=c++20 main.cpp -o biblioteca
-./biblioteca
-```
 
 ---
 

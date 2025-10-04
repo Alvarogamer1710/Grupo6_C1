@@ -340,6 +340,6 @@ Este sistema proporciona una base sólida para entender cómo se estructuran apl
 
 ---
 
-**Autores**: Grupo 6 - AC1  
+**Autores**: Juan Labajo, Álvaro Hernández y Esteban Damián.  
 **Fecha**: Octubre 2025  
 **Versión**: 1.0
